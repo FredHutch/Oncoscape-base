@@ -27,4 +27,5 @@ RUN pip install websocket-client
 RUN npm install -g jshint
 RUN npm install -g qunit
 
+
 CMD ["/bin/bash"]
