@@ -25,4 +25,5 @@ RUN apt-get -y -qq update && apt-get -y -qq install \
 # Install required non-apt packages   
 RUN pip install websocket-client && npm install -g jshint
 
+
 CMD ["/bin/bash"]
