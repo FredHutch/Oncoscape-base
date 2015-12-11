@@ -11,6 +11,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
 # Update the system and install packages
 RUN apt-get -y -qq update && apt-get -y -qq install \
 	r-base=3.2.2* \
+	vim \
 	make \
 	m4 \
 	gcc \
@@ -22,9 +23,8 @@ RUN apt-get -y -qq update && apt-get -y -qq install \
 	python-pip
 
 # Install required non-apt packages   
-RUN pip install websocket-client && npm install -g jshint && npm install -g qunit
+RUN pip install websocket-client
+RUN npm install -g jshint
+RUN npm install -g qunit
 
-# required to get jshint working 
-RUN ln -s /usr/bin/nodejs /usr/bin/node
-
-CMD ['/bin/bash']
+CMD ["/bin/bash"]
