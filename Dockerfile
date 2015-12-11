@@ -23,9 +23,6 @@ RUN apt-get -y -qq update && apt-get -y -qq install \
 	python-pip
 
 # Install required non-apt packages   
-RUN pip install websocket-client
-RUN npm install -g jshint
-RUN npm install -g qunit
-
+RUN pip install websocket-client && npm install -g jshint
 
 CMD ["/bin/bash"]
